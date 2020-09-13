@@ -11,16 +11,12 @@ class Spigot : JavaPlugin() {
             updateChecker.fetchLatest()
             val result = updateChecker.isLatest()
             server.scheduler.runTask(this, Runnable {
-                when (result.versionStatus) {
-                    UpdateChecker.VersionStatus.OUT_OF_DATE -> {
-                        logger.log(
-                            Level.INFO,
-                            "The current version of this plugin is outdated (${result.latestVersion} > ${result.currentVersion})." +
-                                    "Consider downloading a newer version from ${description.website}"
-                        )
-                    }
-                    else -> {
-                    }
+                if (result.versionStatus == Helpers.VersionStatus.OUT_OF_DATE) {
+                    logger.log(
+                        Level.INFO,
+                        "The current version of this plugin is outdated (${result.latestVersion} > ${result.currentVersion})." +
+                                "Consider downloading a newer version from ${description.website}"
+                    )
                 }
             })
         })
