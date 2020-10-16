@@ -19,7 +19,7 @@
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <kotlin.version>1.4.10</kotlin.version>
         <serialization.version>1.0.0-RC</serialization.version>
-        <exposed.version>0.27.1</exposed.version>
+        <exposed.version>0.28.1</exposed.version>
     </properties>
 
     <repositories>
