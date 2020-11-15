@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.*
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
@@ -38,6 +38,10 @@ dependencies {
     implementation("com.zaxxer:HikariCP:3.4.5")
     //implementation("com.okkero.skedule:skedule:1.2.6")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.4.10")
+}
+
+tasks.withType<ProcessResources> {
+    expand("version" to project.version)
 }
 
 tasks.withType<KotlinCompile> {
