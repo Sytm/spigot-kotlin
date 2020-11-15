@@ -14,13 +14,15 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       - name: Build
-        run: mvn verify -B -ntp
+        run: ./gradlew shadowJar
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
           files: |
-            target/spigot-kotlin-*.jar
+            build/libs/spigot-kotlin-*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
