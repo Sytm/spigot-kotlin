@@ -52,15 +52,9 @@ tasks.withType<ShadowJar> {
     archiveClassifier.set("")
 
     dependencies {
-        include(dependency("org.jetbrains.kotlin:kotlin-stdlib-jdk8"))
-        include(dependency("org.jetbrains.kotlin:kotlin-reflect"))
-        include(dependency("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm"))
-        include(dependency("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm"))
-        include(dependency("org.jetbrains.kotlinx:kotlinx-coroutines-core"))
-        include(dependency("org.jetbrains.exposed:exposed-core"))
-        include(dependency("org.jetbrains.exposed:exposed-dao"))
-        include(dependency("org.jetbrains.exposed:exposed-jdbc"))
-        include(dependency("org.jetbrains.exposed:exposed-java-time"))
+        include(dependency("org.jetbrains.kotlin:.*"))
+        include(dependency("org.jetbrains.kotlinx:.*"))
+        include(dependency("org.jetbrains.exposed:.*"))
         include(dependency("com.zaxxer:HikariCP"))
         //include(dependency("com.okkero.skedule:skedule"))
     }

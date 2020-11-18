@@ -64,10 +64,8 @@ class Helpers {
             try {
                 val connection = URL("https://api.github.com/repos/$owner/$repository/releases/latest").openConnection()
                 connection.setRequestProperty("Accept", "application/vnd.github.v3+json")
-                val jsonString = connection.getInputStream().bufferedReader(StandardCharsets.UTF_8).let {
-                    val text = it.readText()
-                    it.close()
-                    text
+                val jsonString = connection.getInputStream().bufferedReader(StandardCharsets.UTF_8).use {
+                    it.readText()
                 }
                 val parsed: JSONObject = JSONParser().parse(jsonString) as JSONObject
                 return (parsed["tag_name"] as String?)?.let {
