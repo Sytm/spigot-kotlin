@@ -20,5 +20,5 @@ class UpdateChecker(private val main: Spigot) {
         )
     }
 
-    class UpdateResult(val versionStatus: Helpers.VersionStatus, val currentVersion: String, val latestVersion: String?)
+    class UpdateResult(val versionStatus: VersionStatus, val currentVersion: String, val latestVersion: String?)
 }

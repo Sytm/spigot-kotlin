@@ -1,10 +1,9 @@
 package de.md5lukas.kotlin
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
-import de.md5lukas.kotlin.Helpers.Companion.compareVersions as compareVersions
-import de.md5lukas.kotlin.Helpers.Companion.fetchLatestGithubReleaseTag as fetchLatestGithubReleaseTag
-import de.md5lukas.kotlin.Helpers.VersionStatus as VersionStatus
+import de.md5lukas.kotlin.Helpers.compareVersions
+import de.md5lukas.kotlin.Helpers.fetchLatestGithubReleaseTag
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class HelpersTest {
 
@@ -66,6 +65,11 @@ class HelpersTest {
     @Test
     fun `Latest major is behind`() {
         assertEquals(VersionStatus.RECENT, compareVersions("2.3.4","1.3.4"))
+    }
+
+    @Test
+    fun `Latest patch is behind, latest build ahead`() {
+        assertEquals(VersionStatus.RECENT, compareVersions("1.4.20", "1.4.10-1"))
     }
 
     @Test
