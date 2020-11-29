@@ -15,6 +15,7 @@ repositories {
     mavenCentral()
     jcenter()
 
+    maven(url = "https://oss.sonatype.org/content/groups/public/")
     maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven(url = "https://repo.lunari.studio/repository/maven-public/")
 }
