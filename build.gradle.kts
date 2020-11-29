@@ -15,29 +15,28 @@ repositories {
     mavenCentral()
     jcenter()
 
-    maven {
-        url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
-    }
-
-
-    maven {
-        url = uri("https://kotlin.bintray.com/kotlinx")
-    }
+    maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    maven(url = "https://repo.lunari.studio/repository/maven-public/")
 }
 
 dependencies {
-    implementation("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.0.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
-    implementation("org.jetbrains.exposed:exposed-core:0.28.1")
-    implementation("org.jetbrains.exposed:exposed-dao:0.28.1")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.28.1")
-    implementation("org.jetbrains.exposed:exposed-java-time:0.28.1")
-    implementation("com.zaxxer:HikariCP:3.4.5")
-    implementation("org.ktorm:ktorm-core:3.2.0")
-    //implementation("com.okkero.skedule:skedule:1.2.6")
+    api("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
+    api(kotlin("stdlib-jdk8"))
+    api(kotlin("reflect"))
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+    api("org.jetbrains.exposed:exposed-core:0.28.1")
+    api("org.jetbrains.exposed:exposed-dao:0.28.1")
+    api("org.jetbrains.exposed:exposed-jdbc:0.28.1")
+    api("org.jetbrains.exposed:exposed-java-time:0.28.1")
+    api("org.ktorm:ktorm-core:3.2.0")
+    api("org.ktorm:ktorm-support-mysql:3.2.0")
+    api("org.ktorm:ktorm-support-postgresql:3.2.0")
+    api("org.ktorm:ktorm-support-oracle:3.2.0")
+    api("org.ktorm:ktorm-support-sqlserver:3.2.0")
+    api("org.ktorm:ktorm-support-sqlite:3.2.0")
+    api("me.ddevil:skedule:0.1.3")
+    api("com.zaxxer:HikariCP:3.4.5")
     testImplementation(kotlin("test-junit5"))
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -62,10 +61,10 @@ tasks.withType<ShadowJar> {
         include(dependency("org.jetbrains.exposed:.*"))
         include(dependency("org.ktorm:.*"))
         include(dependency("com.zaxxer:HikariCP"))
-        //include(dependency("com.okkero.skedule:skedule"))
+        include(dependency("me.ddevil:skedule"))
     }
 
-    relocate("de.md5lukas.commons", "de.md5lukas.lib.commons")
+    relocate("de.md5lukas.commons", "de.md5lukas.kotlin.lib.commons")
 }
 
 tasks.withType<Test> {
