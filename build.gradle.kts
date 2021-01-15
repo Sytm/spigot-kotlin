@@ -34,7 +34,7 @@ dependencies {
     api("org.ktorm:ktorm-support-mysql:3.2.0")
     api("org.ktorm:ktorm-support-postgresql:3.2.0")
     api("org.ktorm:ktorm-support-oracle:3.2.0")
-    api("org.ktorm:ktorm-support-sqlserver:3.2.0")
+    api("org.ktorm:ktorm-support-sqlserver:3.3.0")
     api("org.ktorm:ktorm-support-sqlite:3.2.0")
     api("me.ddevil:skedule:0.1.3")
     api("com.zaxxer:HikariCP:3.4.5")
