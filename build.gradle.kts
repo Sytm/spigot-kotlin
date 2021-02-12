@@ -26,7 +26,7 @@ dependencies {
     api(kotlin("reflect"))
     api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
-    api("org.jetbrains.exposed:exposed-core:0.28.1")
+    api("org.jetbrains.exposed:exposed-core:0.29.1")
     api("org.jetbrains.exposed:exposed-dao:0.28.1")
     api("org.jetbrains.exposed:exposed-jdbc:0.28.1")
     api("org.jetbrains.exposed:exposed-java-time:0.28.1")
