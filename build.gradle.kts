@@ -32,7 +32,7 @@ dependencies {
     api("org.jetbrains.exposed:exposed-java-time:0.28.1")
     api("org.ktorm:ktorm-core:3.2.0")
     api("org.ktorm:ktorm-support-mysql:3.2.0")
-    api("org.ktorm:ktorm-support-postgresql:3.2.0")
+    api("org.ktorm:ktorm-support-postgresql:3.4.1")
     api("org.ktorm:ktorm-support-oracle:3.2.0")
     api("org.ktorm:ktorm-support-sqlserver:3.2.0")
     api("org.ktorm:ktorm-support-sqlite:3.2.0")
